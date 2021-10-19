@@ -184,7 +184,7 @@
 <div class="account">
 	{% csrf_token %}
 	<div class="container">
-		<h2>Account</h2>
+		<h2>Login</h2>
 		<div class="account_grid">
 			   <div class="col-md-6 login-right">
 				<form action="account" method="post">
@@ -193,14 +193,14 @@
 					<input type="text" name="username" id="username"> 
 				
 					<span>Password</span>
-					<input type="password" name="password" id= "password"> 
+					<input type="password" name="password" id= "password">
+					<span id="spanerror" style="color:rgb(196, 0, 0)"></span> 
 					<div class="word-in">
 				  		<a class="forgot" href="#">Forgot Your Password?</a>
 				 		 <input type="button" name="btn1" id="btn1" value="Login">
 				  	</div>
 			    </form>
-			   </div>	
-			   <span id="spanerror" style="color:rgb(255, 238, 0)"></span>
+			   </div>
 			    <div class="col-md-6 login-left">
 			  	 <h4>NEW CUSTOMERS</h4>
 				 <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>

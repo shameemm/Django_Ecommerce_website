@@ -1,4 +1,5 @@
 {% load static %}
+{% static 'pics' as baseUrl %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -231,15 +232,17 @@
 			<div class="content-top1">
 				<div class="col-md-3 col-md2 animated wow fadeInLeft" data-wow-delay=".5s">
 					<div class="col-md1 simpleCart_shelfItem">
+						{% for item in items %}
 						<a href="single.html">
-							<img class="img-responsive" src="{% static 'images/pi5.png' %}" alt="" />
+							<img class="img-responsive" src="{{item.img.url}}" alt="" />
 						</a>
-						<h3><a href="single.html">Palazzo</a></h3>
+						<h3><a href="single.html">{{item.name}}</a></h3>
 						<div class="price">
-								<h5 class="item_price">$450</h5>
+								<h5 class="item_price">${{item.price}}</h5>
 								<a href="#" class="item_add">Add To Cart</a>
 								<div class="clearfix"> </div>
 						</div>
+						{% endfor %}
 					</div>
 				</div>	
 				<div class="col-md-6 animated wow fadeInDown animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
