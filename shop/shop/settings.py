@@ -102,7 +102,7 @@ JAZZMIN_SETTINGS = {
 
     # Additional links to include in the user menu on the top right ("app" url type is not allowed)
     "usermenu_links": [
-        {"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},
+        {"name": "Support", "url": "https://github.com/FAHADPN/Django_Ecommerce_website", "new_window": True},
         {"model": "auth.user"}
     ],
 
