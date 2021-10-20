@@ -23,3 +23,6 @@ class items(models.Model):
 class Cart(models.Model):
     user = models.CharField(max_length=20)
     item = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.user

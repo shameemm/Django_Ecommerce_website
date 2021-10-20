@@ -7,3 +7,5 @@ def index(request):
     item = items.objects.all()
     return render(request,'index.html',{'items':item})
 
+def cart(request):
+    return render(request,'cart.html')
