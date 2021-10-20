@@ -229,10 +229,9 @@
 <div class="content">
 	<div class="container">
 		<div class="content-top">
-			<div class="content-top1">
+				{% for item in items %}
 				<div class="col-md-3 col-md2 animated wow fadeInLeft" data-wow-delay=".5s">
 					<div class="col-md1 simpleCart_shelfItem">
-						{% for item in items %}
 						<a href="single.html">
 							<img class="img-responsive" src="{{item.img.url}}" alt="" />
 						</a>
@@ -242,86 +241,10 @@
 								<a href="#" class="item_add">Add To Cart</a>
 								<div class="clearfix"> </div>
 						</div>
-						{% endfor %}
+						
 					</div>
 				</div>	
-				<div class="col-md-6 animated wow fadeInDown animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
-					<div class="col-md3">
-						<div class="up-t">
-							<h3>Flat 50% Offer</h3>
-						</div>
-					</div>
-				</div>
-			<div class="col-md-3 col-md2 animated wow fadeInRight" data-wow-delay=".5s">
-					<div class="col-md1 simpleCart_shelfItem">
-						<a href="single.html">
-							<img class="img-responsive" src="{% static 'images/pi4.png' %}" alt="" />
-						</a>
-						<h3><a href="single.html">Pant</a></h3>
-						<div class="price">
-								<h5 class="item_price">$300</h5>
-								<a href="#" class="item_add">Add To Cart</a>
-								<div class="clearfix"> </div>
-						</div>
-					</div>
-				</div>	
-			<div class="clearfix"> </div>
-			</div>	
-			<div class="content-top1">
-				<div class="col-md-3 col-md2 animated wow fadeInLeft" data-wow-delay=".5s">
-					<div class="col-md1 simpleCart_shelfItem">
-						<a href="single.html">
-							<img class="img-responsive" src="{% static 'images/pi3.png' %}" alt="" />
-						</a>
-						<h3><a href="single.html">Palazoo</a></h3>
-						<div class="price">
-								<h5 class="item_price">$300</h5>
-								<a href="#" class="item_add">Add To Cart</a>
-								<div class="clearfix"> </div>
-						</div>
-					</div>
-				</div>	
-			<div class="col-md-3 col-md2 animated wow fadeInLeft" data-wow-delay=".5s">
-					<div class="col-md1 simpleCart_shelfItem">
-						<a href="single.html">
-							<img class="img-responsive" src="{% static 'images/pi2.png' %}" alt="" />
-						</a>
-						<h3><a href="single.html">Trouser</a></h3>
-						<div class="price">
-								<h5 class="item_price">$300</h5>
-								<a href="#" class="item_add">Add To Cart</a>
-								<div class="clearfix"> </div>
-						</div>
-					</div>
-				</div>	
-			<div class="col-md-3 col-md2 animated wow fadeInRight" data-wow-delay=".5s">
-					<div class="col-md1 simpleCart_shelfItem">
-						<a href="single.html">
-							<img class="img-responsive" src="{% static 'images/pi6.png' %}" alt="" />
-						</a>
-						<h3><a href="single.html">Trouser</a></h3>
-						<div class="price">
-								<h5 class="item_price">$300</h5>
-								<a href="#" class="item_add">Add To Cart</a>
-								<div class="clearfix"> </div>
-						</div>
-					</div>
-				</div>	
-			<div class="col-md-3 col-md2 cmn animated wow fadeInRight" data-wow-delay=".5s">
-					<div class="col-md1 simpleCart_shelfItem">
-						<a href="single.html">
-							<img class="img-responsive" src="{% static 'images/pi8.png' %}" alt="" />
-						</a>
-						<h3><a href="single.html">Palazoo</a></h3>
-						<div class="price">
-								<h5 class="item_price">$300</h5>
-								<a href="#" class="item_add">Add To Cart</a>
-								<div class="clearfix"> </div>
-						</div>
-					</div>
-				</div>	
-			<div class="clearfix"> </div>
-			</div>			
+				{% endfor %}			
 		</div>
 	</div>
 </div>
