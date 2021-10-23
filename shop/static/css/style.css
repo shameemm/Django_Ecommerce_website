@@ -933,6 +933,20 @@ ul.social {
 	padding: 0.5em;
 	margin: 0.5em 0;
 }
+.quantity{
+  display: inline-block;
+  font-weight: 700;
+}
+.chg-quantity{
+  width:12px;
+  cursor:pointer;
+  display: block;
+  margin-top: 5px;
+  transition: .1s;
+}
+.chg-quantity:hover{
+  opacity: .6;
+}
 .checkbox {
 	margin-bottom: 4px;
 	padding-left: 27px;
