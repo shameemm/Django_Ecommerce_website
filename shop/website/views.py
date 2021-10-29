@@ -6,12 +6,27 @@ from django.http import JsonResponse
 # Create your views here.
 
 def index(request):
-    item = items.objects.all()
-    return render(request,'index.html',{'items':item})
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer=customer,complete=False)
+        
+    else:
+        order = {'get_cart_total':0,'get_cart_items':0}
+        cartItems = order['get_cart_items']
+    products = items.objects.all()
+    context = {'products':products}
+    return render(request,'index.html',context)
 
 def cart(request):
-    
-    return render(request,'cart.html')
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer=customer,complete=False)
+        items = order.orderitem_set.all()
+    else:
+        items =[]
+        order = {'get_cart_total':0,'get_cart_items':0}
+    context = {'items':items,'order':order}
+    return render(request,'cart.html',context)
 
 def single(request):
     item = items(items.id==1)
@@ -42,4 +57,12 @@ def updateItem(request):
     return JsonResponse('Item was added',safe=False)
 
 def checkout(request):
-    return render(request,'checkout.html')
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer=customer,complete=False)
+        items = order.orderitem_set.all()
+    else:
+        items = []
+        order = {'get_cart_total':0,'get_cart_items':0}
+    context = {'items':items,'order':order}
+    return render(request,'checkout.html',context)

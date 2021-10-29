@@ -77,12 +77,13 @@
 			<div class="col-sm-4 world animated wow fadeInRight" data-wow-delay=".5s">
 					<div class="cart box_1">
 						<a href="cart">
-						<h3> <div class="total">
-							<span class="simpleCart_total"></span></div>
-							<img src="{% static 'images/cart.png' %}" alt=""/></h3>
+						<h3>
+							<img src="{% static 'images/cart.png' %}" alt=""/>
+							<div class="total">
+								<span><p id="cart-total">{{cartItems}}</p></span></div>
+						</h3>
 						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-
+						
 					</div>
 			</div>
 			<div class="col-sm-2 number animated wow fadeInRight" data-wow-delay=".5s">
@@ -255,7 +256,7 @@
 <div class="content">
 	<div class="container">
 		<div class="content-top">
-				{% for item in items %}
+				{% for item in products %}
 				{% if item.category.category == "womens wear" %}
 				<div class="col-md-3 col-md2 animated wow fadeInLeft" data-wow-delay=".5s">
 					<div class="col-md1 simpleCart_shelfItem">
@@ -357,7 +358,7 @@
 	<div class="c-btm">
 		<div class="content-top1">
 			<div class="container">
-				{% for item in items %}
+				{% for item in products %}
 				{% if item.category.category == "mens wear" %}
 				<div class="col-md-3 col-md2 animated wow fadeInLeft" data-wow-delay=".5s">
 					<div class="col-md1 simpleCart_shelfItem">

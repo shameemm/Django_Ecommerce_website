@@ -37,23 +37,6 @@ class Cart(models.Model):
         return self.user
 
 class Order(models.Model):
-    user = models.CharField(max_length=20, null=False)
-    item = models.CharField(max_length=200, null=False)
-    qty = models.IntegerField(null=False)
-    totel_price = models.FloatField()
-    name = models.CharField(max_length=20, null=False)
-    number = models.CharField(max_length=20, null=False)
-    email = models.CharField(max_length=20, null=False)
-    address = models.CharField(max_length=20, null=False)
-    address2 = models.CharField(max_length=20, null=False)
-    city = models.CharField(max_length=20, null=False)
-    state = models.CharField(max_length=20, null=False)
-    pin = models.CharField(max_length=8, null=False)
-
-    def __str__(self):
-        return self.user
-
-class Order(models.Model):
 	customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
 	date_ordered = models.DateTimeField(auto_now_add=True)
 	complete = models.BooleanField(default=False)

@@ -1,4 +1,5 @@
- @font-face {
+
+@font-face {
     font-family: 'Roboto-Regular';
     src:url(../fonts/Roboto-Regular.ttf) format('truetype');
 }
@@ -13,6 +14,14 @@ body a{
 	-moz-transition:0.5s all;
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
+}
+.cart-row{
+	display: flex;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ececec;
+
 }
 ul{
 	padding: 0;
@@ -812,7 +821,7 @@ p.footer-class a:hover{
 	display: inline-block;
 	text-transform: uppercase;
 }
-.acount-btn:hover, .login-right input[type="button"]:hover{
+.acount-btn:hover, .login-right input[type="submit"]:hover{
 	background:#fa03bb;
 	text-decoration:none;
 	color:#fff;
@@ -845,7 +854,7 @@ p.footer-class a:hover{
 	padding:10px;
 	  margin: 0.5em 0;
 }
-.login-right input[type="button"] {
+.login-right input[type="submit"] {
 	background:#403b37;
 	color: #FFF;
 	font-size: 0.9em;
@@ -931,6 +940,20 @@ ul.social {
 	font-size: 1em;
 	padding: 0.5em;
 	margin: 0.5em 0;
+}
+.quantity{
+  display: inline-block;
+  font-weight: 700;
+}
+.chg-quantity{
+  width:12px;
+  cursor:pointer;
+  display: block;
+  margin-top: 5px;
+  transition: .1s;
+}
+.chg-quantity:hover{
+  opacity: .6;
 }
 .checkbox {
 	margin-bottom: 4px;
