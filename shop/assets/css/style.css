@@ -15,14 +15,6 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
-.cart-row{
-	display: flex;
-    align-items: flex-stretch;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ececec;
-
-}
 ul{
 	padding: 0;
 	margin: 0;
