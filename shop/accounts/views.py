@@ -34,7 +34,7 @@ def user_register(request):
         return render(request,'register.html')
 
 def user_login(request):
-    if 'username' in request.session:
+    if request.user.is_authenticated:
         return redirect('/')
     else:
         if request.method=='POST':
@@ -44,7 +44,7 @@ def user_login(request):
             user = auth.authenticate(username=username,password=password)
 
             if user is not None:
-                request.session['username']=username
+                login(request,user)
                 return JsonResponse(
                     {'success':True},
                     safe = False
@@ -59,6 +59,6 @@ def user_login(request):
             return render(request,'account.html')
 
 def user_logout(request):
-    if 'username' in request.session:
-        request.session.flush()
+    if request.user.is_authenticated:
+        logout(request)
     return redirect(user_login)

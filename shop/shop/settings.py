@@ -36,6 +36,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'website.apps.WebsiteConfig',
     'jazzmin',
+    'mathfilters',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -215,7 +216,7 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Shop',
+        'NAME': 'website',
         'USER': 'postgres',
         'PASSWORD':'Doun0me?',
         'HOST': 'localhost'

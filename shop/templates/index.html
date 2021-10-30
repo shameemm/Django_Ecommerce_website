@@ -38,9 +38,8 @@
 <script>
  new WOW().init();
 </script>
-{% if 'username' in request.session %}
 <script type="text/javascript">
-	var user = "{{user.id}}"
+	var user = "{{request.user}}"
 	function getToken(name) {
 		let cookieValue = null;
 		if (document.cookie && document.cookie !== '') {
@@ -57,12 +56,8 @@
 		return cookieValue;
 	}
 	const csrftoken = getToken('csrftoken');
+	
 </script>
-{% else %}
-<script type="text/javascript">
-	var user = 'AnonymousUser'
-</script>
-{% endif %}
 
 <!-- //animation-effect -->
 </head>
@@ -87,8 +82,8 @@
 					</div>
 			</div>
 			<div class="col-sm-2 number animated wow fadeInRight" data-wow-delay=".5s">
-				{% if 'username' in request.session %}
-					<span><i class="glyphicon glyphicon-phone"></i>Hello,{{user.first_name}}</span>
+				{% if request.user.is_authenticated %}
+					<span><i class="glyphicon glyphicon-phone"></i>Hello,{{request.user}}</span>
 				{% endif %}
 				</div>
 			<div class="col-sm-2 search animated wow fadeInRight" data-wow-delay=".5s">		
@@ -162,7 +157,7 @@
 								</div>				
 							</li>
 							<li><a href="products.html">Products</a></li>
-							{% if 'username' in request.session %}
+							{% if request.user.is_authenticated %}
 							<li><a href="accounts/logout">Logout</a></li>
 							{% else %}
 							<li><a href="accounts/account">Sign In</a></li>
@@ -261,7 +256,7 @@
 				<div class="col-md-3 col-md2 animated wow fadeInLeft" data-wow-delay=".5s">
 					<div class="col-md1 simpleCart_shelfItem">
 						<a href=single>
-							<img class="img-responsive" src="{{item.img.url}}" alt="" />
+							<img class="img-responsive" src="{{item.imageURL}}" alt="" />
 						</a>
 						<h3>{{item.name}}</h3>
 						<div class="price">
@@ -363,7 +358,7 @@
 				<div class="col-md-3 col-md2 animated wow fadeInLeft" data-wow-delay=".5s">
 					<div class="col-md1 simpleCart_shelfItem">
 						<a href="single.html">
-							<img class="img-responsive" src="{{item.img.url}}" alt="" />
+							<img class="img-responsive" src="{{item.imageURL}}" alt="" />
 						</a>
 						<h3><a href="single.html">{{item.name}}</a></h3>
 						<div class="price">
