@@ -5,6 +5,12 @@
 An ecommerce website based on django framework
 
 <a href='https://shophopfashion.herokuapp.com/'>Live Website </a>
+### Demo Video
+
+
+https://user-images.githubusercontent.com/47622791/139580348-42d78947-6723-4512-8e12-f52ea28498a1.mp4
+
+
 
 ### Prerequisites
 Make sure you have installed postgreql in your device and a database is setup. 
