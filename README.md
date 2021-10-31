@@ -49,5 +49,5 @@ localhost:8000
 
 Fahad P N - <a href='https://www.linkedin.com/in/fahad-p-n-93a7441b4/'>LinkedIn</a>
 
-Project Link:<a href='https://github.com/FAHADPN/Django_Ecommerce_website'> Blood_bank</a>
+Project Link:<a href='https://github.com/FAHADPN/Django_Ecommerce_website'> Django_Ecommerce_website</a>
 
