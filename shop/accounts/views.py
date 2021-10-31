@@ -3,6 +3,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.http import JsonResponse
 from django.contrib.auth import authenticate,login,logout
+from website.models import Customer
 # Create your views here.
 
 def user_register(request):
@@ -25,6 +26,8 @@ def user_register(request):
             else:
                 user = User.objects.create_user(username=username, password=password1, email=email,first_name=first_name,last_name=last_name)
                 user.save()
+                customer = Customer.objects.create(user=user,name =first_name,email=email)
+                customer.save()
                 return redirect('/')
         else:
             messages.info(request,"password not matching....")
