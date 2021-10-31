@@ -8,7 +8,7 @@ An ecommerce website based on django framework
 ### Demo Video
 
 
-https://user-images.githubusercontent.com/47622791/139580348-42d78947-6723-4512-8e12-f52ea28498a1.mp4
+https://user-images.githubusercontent.com/47622791/139581101-ad7ed306-8456-4ad1-829d-5b0e6702215e.mp4
 
 
 
